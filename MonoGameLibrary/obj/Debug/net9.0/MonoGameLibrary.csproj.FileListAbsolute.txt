@@ -10,3 +10,4 @@ c:\Users\bigbu\Desktop\Sprint0\MonoGameLibrary\obj\Debug\net9.0\MonoGameLibrary.
 c:\Users\bigbu\Desktop\Sprint0\MonoGameLibrary\obj\Debug\net9.0\refint\MonoGameLibrary.dll
 c:\Users\bigbu\Desktop\Sprint0\MonoGameLibrary\obj\Debug\net9.0\MonoGameLibrary.pdb
 c:\Users\bigbu\Desktop\Sprint0\MonoGameLibrary\obj\Debug\net9.0\ref\MonoGameLibrary.dll
+c:\Users\bigbu\Desktop\Sprint0\MonoGameLibrary\obj\Debug\net9.0\MonoGameLibrary.sourcelink.json

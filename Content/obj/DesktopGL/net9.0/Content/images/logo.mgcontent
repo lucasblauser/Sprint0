@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>c:/Users/bigbu/Desktop/Sprint0/Content/images/logo.png</SourceFile>
+  <SourceFile>C:/Users/bigbu/Desktop/Sprint0/Content/images/logo.png</SourceFile>
   <SourceTime>2026-08-27T18:32:25.1359059-04:00</SourceTime>
-  <DestFile>c:/Users/bigbu/Desktop/Sprint0/Content/bin/DesktopGL/Content/images/logo.xnb</DestFile>
-  <DestTime>2026-08-31T18:50:50.8148759-04:00</DestTime>
+  <DestFile>C:/Users/bigbu/Desktop/Sprint0/Content/bin/DesktopGL/Content/images/logo.xnb</DestFile>
+  <DestTime>2026-08-31T19:49:46.9745288-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2026-08-14T17:50:10-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

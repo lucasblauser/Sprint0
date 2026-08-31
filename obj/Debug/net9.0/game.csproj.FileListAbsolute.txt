@@ -41,3 +41,4 @@ c:\Users\bigbu\Desktop\Sprint0\bin\Debug\net9.0\Content\images\mario.xnb
 c:\Users\bigbu\Desktop\Sprint0\bin\Debug\net9.0\Content\images\mario-definition.xml
 C:\Users\bigbu\Desktop\Sprint0\bin\Debug\net9.0\Content\fonts\roboto.xnb
 C:\Users\bigbu\Desktop\Sprint0\bin\Debug\net9.0\Content\fonts\arial.xnb
+c:\Users\bigbu\Desktop\Sprint0\obj\Debug\net9.0\game.sourcelink.json
