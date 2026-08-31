@@ -4,9 +4,9 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/bigbu/Desktop/Sprint0/Content/fonts/arial.spritefont</File>
-    <File>C:/Users/bigbu/Desktop/Sprint0/Content/images/logo.png</File>
-    <File>C:/Users/bigbu/Desktop/Sprint0/Content/images/mario.png</File>
+    <File>c:/Users/bigbu/Desktop/Sprint0/Content/fonts/arial.spritefont</File>
+    <File>c:/Users/bigbu/Desktop/Sprint0/Content/images/logo.png</File>
+    <File>c:/Users/bigbu/Desktop/Sprint0/Content/images/mario.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

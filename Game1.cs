@@ -110,7 +110,6 @@ public class Game1 : Core
             _mario.Animation = idleLeft;
         }
     }
-          
 
     protected override void Draw(GameTime gameTime)
     {

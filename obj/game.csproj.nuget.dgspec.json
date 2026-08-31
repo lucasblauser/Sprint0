@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bigbu\\Desktop\\Sprint0\\game.csproj": {}
+    "c:\\Users\\bigbu\\Desktop\\Sprint0\\game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bigbu\\Desktop\\Sprint0\\game.csproj": {
+    "c:\\Users\\bigbu\\Desktop\\Sprint0\\game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bigbu\\Desktop\\Sprint0\\game.csproj",
+        "projectUniqueName": "c:\\Users\\bigbu\\Desktop\\Sprint0\\game.csproj",
         "projectName": "game",
-        "projectPath": "C:\\Users\\bigbu\\Desktop\\Sprint0\\game.csproj",
+        "projectPath": "c:\\Users\\bigbu\\Desktop\\Sprint0\\game.csproj",
         "packagesPath": "C:\\Users\\bigbu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bigbu\\Desktop\\Sprint0\\obj\\",
+        "outputPath": "c:\\Users\\bigbu\\Desktop\\Sprint0\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bigbu\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -27,8 +27,8 @@
             "framework": "net9.0",
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\bigbu\\Desktop\\Sprint0\\MonoGameLibrary\\MonoGameLibrary.csproj": {
-                "projectPath": "C:\\Users\\bigbu\\Desktop\\Sprint0\\MonoGameLibrary\\MonoGameLibrary.csproj"
+              "c:\\Users\\bigbu\\Desktop\\Sprint0\\MonoGameLibrary\\MonoGameLibrary.csproj": {
+                "projectPath": "c:\\Users\\bigbu\\Desktop\\Sprint0\\MonoGameLibrary\\MonoGameLibrary.csproj"
               }
             }
           }
@@ -79,14 +79,14 @@
         }
       }
     },
-    "C:\\Users\\bigbu\\Desktop\\Sprint0\\MonoGameLibrary\\MonoGameLibrary.csproj": {
+    "c:\\Users\\bigbu\\Desktop\\Sprint0\\MonoGameLibrary\\MonoGameLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bigbu\\Desktop\\Sprint0\\MonoGameLibrary\\MonoGameLibrary.csproj",
+        "projectUniqueName": "c:\\Users\\bigbu\\Desktop\\Sprint0\\MonoGameLibrary\\MonoGameLibrary.csproj",
         "projectName": "MonoGameLibrary",
-        "projectPath": "C:\\Users\\bigbu\\Desktop\\Sprint0\\MonoGameLibrary\\MonoGameLibrary.csproj",
+        "projectPath": "c:\\Users\\bigbu\\Desktop\\Sprint0\\MonoGameLibrary\\MonoGameLibrary.csproj",
         "packagesPath": "C:\\Users\\bigbu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bigbu\\Desktop\\Sprint0\\MonoGameLibrary\\obj\\",
+        "outputPath": "c:\\Users\\bigbu\\Desktop\\Sprint0\\MonoGameLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bigbu\\AppData\\Roaming\\NuGet\\NuGet.Config"
