@@ -1,0 +1,5 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"c:/Users/bigbu/Desktop/Sprint0/Content/fonts/arial.spritefont","c:/Users/bigbu/Desktop/Sprint0/Content/bin/DesktopGL/Content/fonts/arial.xnb","FontDescriptionProcessor","SpriteFontContent",2068,70681,0.196821
+"c:/Users/bigbu/Desktop/Sprint0/Content/images/logo.png","c:/Users/bigbu/Desktop/Sprint0/Content/bin/DesktopGL/Content/images/logo.xnb","TextureProcessor","Texture2DContent",16734,311381,0.0207378
+"c:/Users/bigbu/Desktop/Sprint0/Content/images/mario-definition.xml","c:\Users\bigbu\Desktop\Sprint0\Content\bin\DesktopGL\Content\images/mario-definition.xml","CopyItem","File",1463,1463,0.0010659
+"c:/Users/bigbu/Desktop/Sprint0/Content/images/mario.png","c:/Users/bigbu/Desktop/Sprint0/Content/bin/DesktopGL/Content/images/mario.xnb","TextureProcessor","Texture2DContent",6584,304645,0.0111089
