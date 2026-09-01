@@ -29,7 +29,7 @@ public class Game1 : Core
 
     private SpriteFont font;
 
-    private const float MOVEMENT_SPEED = 5.0f;
+    private const float MOVEMENT_SPEED = 300.0f; // pixels / second
 
     public Game1() : base("game", 1280, 720, false)
     {
@@ -81,8 +81,8 @@ public class Game1 : Core
     {
         keyboardController.Update();
         mouseController.Update();
-        mario.Update();
-        luigi.Update();
+        mario.Update(gameTime);
+        luigi.Update(gameTime);
         marioSprite.Update(gameTime);
         luigiSprite.Update(gameTime);
         base.Update(gameTime);

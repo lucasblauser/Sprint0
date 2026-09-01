@@ -23,7 +23,7 @@ public class PlatformPlayer : IPlayer
         this.movementSpeed = movementSpeed;
     }
 
-    public void Update()
+    public void Update(GameTime gameTime)
     {
          Vector2 direction = controller.movementDirection;
         float positionSpeed = movementSpeed;
@@ -41,7 +41,7 @@ public class PlatformPlayer : IPlayer
         {
             sprite.animationSpeed = 1.0f;
         }
-        this.position += direction * positionSpeed;
+        this.position += direction * positionSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
         if(direction.X > 0 && sprite.Animation != walkRight)
         {

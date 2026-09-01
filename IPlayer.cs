@@ -7,7 +7,7 @@ using MonoGameLibrary.Graphics;
 using MonoGameLibrary.Input;
 public interface IPlayer
 {
-    void Update();
+    void Update(GameTime gameTime);
 
     IController controller { get; }
     Vector2 position { get; }
