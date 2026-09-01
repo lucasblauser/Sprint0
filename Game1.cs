@@ -96,7 +96,7 @@ public class Game1 : Core
 
         SpriteBatch.DrawString(font, "Use WASD or Arrow Keys to Move Mario\nUse Space to Run", Vector2.Zero, Color.Red);
         SpriteBatch.DrawString(font, "Use Mouse Buttons to Move Luigi\nPress Down Scroll Wheel to Run", new Vector2(0, 100), Color.Green);
-        SpriteBatch.DrawString(font, "Code Made By: Lucas Blauser\nSprites from Carmen and Modified by Me", new Vector2(0, Window.ClientBounds.Height - 100), Color.Black);
+        SpriteBatch.DrawString(font, "Press ESC to Exit\nCode Made By: Lucas Blauser\nSprites from Carmen and Modified by Me", new Vector2(0, Window.ClientBounds.Height - 130), Color.Black);
         marioSprite.Draw(SpriteBatch, mario.position);
         luigiSprite.Draw(SpriteBatch, luigi.position);
 
