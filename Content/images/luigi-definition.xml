@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas>
+    <Texture>images/luigi</Texture>
+    <Regions>
+        <Region name="luigi1" x="209" y="122" width="17" height="32" />
+        <Region name="luigi2" x="180" y="122" width="17" height="32" />
+        <Region name="luigi-walk-1" x="237" y="122" width="17" height="32" />
+        <Region name="luigi-walk-2" x="263" y="122" width="17" height="32" />
+        <Region name="luigi-walk-3" x="287" y="122" width="17" height="32" />
+        <Region name="luigi-walk-4" x="151" y="122" width="17" height="32" />
+        <Region name="luigi-walk-5" x="127" y="122" width="17" height="32" />
+        <Region name="luigi-walk-6" x="102" y="122" width="17" height="32" />
+    </Regions>
+    <Animations>
+        <Animation name="luigi-idle-right" delay="200">
+            <Frame region="luigi1" />
+        </Animation>
+        <Animation name="luigi-idle-left" delay="200">
+            <Frame region="luigi2" />
+        </Animation>
+        <Animation name="luigi-walk-right" delay="100">
+            <Frame region="luigi-walk-1" />
+            <Frame region="luigi-walk-2" />
+            <Frame region="luigi-walk-3" />
+        </Animation>
+        <Animation name="luigi-walk-left" delay="100">
+            <Frame region="luigi-walk-4" />
+            <Frame region="luigi-walk-5" />
+            <Frame region="luigi-walk-6" />
+        </Animation>
+    </Animations>
+</TextureAtlas>

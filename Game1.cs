@@ -11,19 +11,23 @@ namespace game;
 public class Game1 : Core
 
 {
-    private AnimatedSprite _mario;
+    private IPlayer mario;
 
-    private Vector2 _marioPosition;
+    private AnimatedSprite marioSprite;
 
     private Animation[] marioAnimations;
 
-    private IController _keyboardController;
+    private IPlayer luigi;
 
-    private IController _mouseController;
+    private AnimatedSprite luigiSprite;
 
-    private SpriteFont _font;
+    private Animation[] luigiAnimations;
 
-    private Vector2 _textPosition;
+    private IController keyboardController;
+
+    private IController mouseController;
+
+    private SpriteFont font;
 
     private const float MOVEMENT_SPEED = 5.0f;
 
@@ -34,100 +38,71 @@ public class Game1 : Core
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
         base.Initialize();
 
-        _marioPosition = new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height) * 0.5f;
-        _mario.CenterOrigin();
+        keyboardController = new KeyboardController();
+        mouseController = new MouseController();
+        Vector2 marioStartPosition = new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height) * 0.5f;
+        Vector2 luigiStartPosition = marioStartPosition + new Vector2(100, 0);
 
-        _keyboardController = new KeyboardController();
-        _mouseController = new MouseController();
-
-        _textPosition = new Vector2(0, Window.ClientBounds.Height - 200);
+        mario = new PlatformPlayer(keyboardController, marioStartPosition, marioSprite, marioAnimations, MOVEMENT_SPEED);
+        luigi = new PlatformPlayer(mouseController, luigiStartPosition, luigiSprite, luigiAnimations, MOVEMENT_SPEED);
     }
 
     protected override void LoadContent()
     {
-        TextureAtlas atlas = TextureAtlas.FromFile(Content, "images/mario-definition.xml");
+        TextureAtlas marioAtlas = TextureAtlas.FromFile(Content, "images/mario-definition.xml");
+        TextureAtlas luigiAtlas = TextureAtlas.FromFile(Content, "images/luigi-definition.xml");
 
         marioAnimations = new Animation[4];
-        marioAnimations[0] = atlas.GetAnimation("mario-idle-right");
-        marioAnimations[1] = atlas.GetAnimation("mario-idle-left");
-        marioAnimations[2] = atlas.GetAnimation("mario-walk-right");
-        marioAnimations[3] = atlas.GetAnimation("mario-walk-left");
+        marioAnimations[0] = marioAtlas.GetAnimation("mario-idle-right");
+        marioAnimations[1] = marioAtlas.GetAnimation("mario-idle-left");
+        marioAnimations[2] = marioAtlas.GetAnimation("mario-walk-right");
+        marioAnimations[3] = marioAtlas.GetAnimation("mario-walk-left");
 
-        _mario = atlas.CreateAnimatedSprite("mario-idle-right");
-        _mario.CenterOrigin();
-        _mario.Scale = new Vector2(4.0f, 4.0f);
+        luigiAnimations = new Animation[4];
+        luigiAnimations[0] = luigiAtlas.GetAnimation("luigi-idle-right");
+        luigiAnimations[1] = luigiAtlas.GetAnimation("luigi-idle-left");
+        luigiAnimations[2] = luigiAtlas.GetAnimation("luigi-walk-right");
+        luigiAnimations[3] = luigiAtlas.GetAnimation("luigi-walk-left");
 
-         _font = Content.Load<SpriteFont>("fonts/arial");
+        marioSprite = marioAtlas.CreateAnimatedSprite("mario-idle-right");
+        marioSprite.CenterOrigin();
+        marioSprite.Scale = new Vector2(4.0f, 4.0f);
+
+        luigiSprite = luigiAtlas.CreateAnimatedSprite("luigi-idle-left");
+        luigiSprite.CenterOrigin();
+        luigiSprite.Scale = new Vector2(4.0f, 4.0f);
+
+         font = Content.Load<SpriteFont>("fonts/arial");
     }
 
     protected override void Update(GameTime gameTime)
     {
+        keyboardController.Update();
+        mouseController.Update();
+        mario.Update();
+        luigi.Update();
+        marioSprite.Update(gameTime);
+        luigiSprite.Update(gameTime);
         base.Update(gameTime);
-
-        _mario.Update(gameTime);
-        _keyboardController.Update();
-        _mouseController.Update();
-        _marioPosition = movePlayer(_keyboardController, _marioPosition);
-    }
-
-    private Vector2 movePlayer(IController _controller, Vector2 _position)
-    {
-        Vector2 direction = _controller.movementDirection;
-        float positionSpeed = MOVEMENT_SPEED;
-        Animation idleRight = marioAnimations[0];
-        Animation idleLeft = marioAnimations[1];
-        Animation walkRight = marioAnimations[2];
-        Animation walkLeft = marioAnimations[3];
-
-        if(_controller.isRunning)
-        {
-            positionSpeed *= 1.5f;
-            _mario.animationSpeed = 1.5f;
-        }
-        else
-        {
-            _mario.animationSpeed = 1.0f;
-        }
-        _position += direction * positionSpeed;
-
-        if(direction.X > 0 && _mario.Animation != walkRight)
-        {
-            _mario.Animation = walkRight;
-        }
-        else if(direction.X < 0 && _mario.Animation != walkLeft)
-        {
-            _mario.Animation = walkLeft;
-        }
-        else if (direction.X == 0 && _mario.Animation == walkRight)
-        {
-            _mario.Animation = idleRight;
-        }
-        else if (direction.X == 0 && _mario.Animation == walkLeft)
-        {
-            _mario.Animation = idleLeft;
-        }
-
-        return _position;
     }
 
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        // TODO: Add your drawing code here
         SpriteBatch.Begin(samplerState : SamplerState.PointClamp);
 
-        SpriteBatch.DrawString(_font, "Use WASD or Arrow Keys to Move Mario\nUse Space to Run\nProgram Made By: Lucas Blauser\nSprites from gameresources.html on Carmen\nESC to Exit", _textPosition, Color.Black);
-        _mario.Draw(SpriteBatch, _marioPosition);
+        SpriteBatch.DrawString(font, "Use WASD or Arrow Keys to Move Mario\nUse Space to Run", Vector2.Zero, Color.Red);
+        SpriteBatch.DrawString(font, "Use Mouse Buttons to Move Luigi\nPress Down Scroll Wheel to Run", new Vector2(0, 100), Color.Green);
+        SpriteBatch.DrawString(font, "Code Made By: Lucas Blauser\nSprites from Carmen and Modified by Me", new Vector2(0, Window.ClientBounds.Height - 100), Color.Black);
+        marioSprite.Draw(SpriteBatch, mario.position);
+        luigiSprite.Draw(SpriteBatch, luigi.position);
 
         SpriteBatch.End();
 
         base.Draw(gameTime);
     }
-
-    
 }
     
