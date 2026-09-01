@@ -70,28 +70,28 @@ public class Game1 : Core
         _mario.Update(gameTime);
         _keyboardController.Update();
         _mouseController.Update();
-        moveMario(gameTime);
+        _marioPosition = movePlayer(_keyboardController, _marioPosition);
     }
 
-    private void moveMario(GameTime gameTime)
+    private Vector2 movePlayer(IController _controller, Vector2 _position)
     {
-        Vector2 direction = _keyboardController.movementDirection;
+        Vector2 direction = _controller.movementDirection;
         float positionSpeed = MOVEMENT_SPEED;
         Animation idleRight = marioAnimations[0];
         Animation idleLeft = marioAnimations[1];
         Animation walkRight = marioAnimations[2];
         Animation walkLeft = marioAnimations[3];
 
-        if(_keyboardController.isRunning)
+        if(_controller.isRunning)
         {
             positionSpeed *= 1.5f;
-            _mario.Speed = 1.5f;
+            _mario.animationSpeed = 1.5f;
         }
         else
         {
-            _mario.Speed = 1.0f;
+            _mario.animationSpeed = 1.0f;
         }
-        _marioPosition += direction * positionSpeed;
+        _position += direction * positionSpeed;
 
         if(direction.X > 0 && _mario.Animation != walkRight)
         {
@@ -109,6 +109,8 @@ public class Game1 : Core
         {
             _mario.Animation = idleLeft;
         }
+
+        return _position;
     }
 
     protected override void Draw(GameTime gameTime)

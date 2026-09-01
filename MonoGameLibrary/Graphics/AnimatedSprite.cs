@@ -9,7 +9,7 @@ public class AnimatedSprite : Sprite
     private TimeSpan _elapsed;
     private Animation _animation;
 
-    public float Speed { get; set; } = 1.0f;
+    public float animationSpeed { get; set; } = 1.0f;
 
     /// <summary>
     /// Gets or Sets the animation for this animated sprite.
@@ -44,7 +44,7 @@ public class AnimatedSprite : Sprite
     /// <param name="gameTime">A snapshot of the game timing values provided by the framework.</param>
     public void Update(GameTime gameTime)
     {
-        _elapsed += TimeSpan.FromTicks((long)(gameTime.ElapsedGameTime.Ticks * Speed));
+        _elapsed += TimeSpan.FromTicks((long)(gameTime.ElapsedGameTime.Ticks * animationSpeed));
 
         if (_elapsed >= _animation.Delay)
         {
