@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas>
-    <Texture>images/atlas</Texture>
-    <Regions>
-        <Region name="mario" x="0" y="0" width="405" height="188" />
-    </Regions>
-</TextureAtlas>
