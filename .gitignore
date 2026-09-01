@@ -6,6 +6,9 @@
 # dotenv files
 .env
 
+# Content pipeline
+/.mgcb/
+
 # User-specific files
 *.rsuser
 *.suo
