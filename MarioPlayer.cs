@@ -33,7 +33,7 @@ public class MarioPlayer : I2DPlatformPlayer
         if(controller.isRunning)
         {
             positionSpeed *= 1.5f;
-            sprite.SetAnimationSpeedMultiplier(1.5f);
+            sprite.SetAnimationSpeedMultiplier(2.0f);
         }
         else
         {

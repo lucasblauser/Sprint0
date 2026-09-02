@@ -16,8 +16,6 @@ public class Game1 : Core
 
     private ISprite marioSprite;
 
-    private ISprite luigiSprite;
-
     private AnimatedSprite marioAnimatedSprite;
 
     private Animation[] marioAnimations;
@@ -25,6 +23,8 @@ public class Game1 : Core
     // LUIGI
 
     private I2DPlatformPlayer luigi;
+
+    private ISprite luigiSprite;
 
     private AnimatedSprite luigiAnimatedSprite;
 
