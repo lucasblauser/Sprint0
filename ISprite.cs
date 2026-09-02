@@ -5,13 +5,13 @@ using Microsoft.Xna.Framework.Input;
 using MonoGameLibrary;
 using MonoGameLibrary.Graphics;
 using MonoGameLibrary.Input;
-public interface IPlayer
+public interface ISprite
 {
     void Update(GameTime gameTime);
+    void Draw(SpriteBatch spriteBatch, Vector2 position);
+    void SetAnimation(Animation animation);
+    void SetAnimationSpeedMultiplier(float speed);
 
-    IController controller { get; }
-    Vector2 position { get; }
-    AnimatedSprite sprite { get; }
+    AnimatedSprite animatedSprite { get; }
     Animation[] animations { get; }
-    float movementSpeed { get; }
 }
