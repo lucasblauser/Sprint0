@@ -44,7 +44,7 @@ public class Game1 : Core
 
     private const float MOVEMENT_SPEED = 300.0f; // pixels / second
 
-    public Game1() : base("game", 1280, 720, false)
+    public Game1() : base("Sprint0", 1280, 720, false)
     {
         
     }
