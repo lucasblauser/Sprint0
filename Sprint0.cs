@@ -96,8 +96,6 @@ public class Game1 : Core
 
     protected override void Update(GameTime gameTime)
     {
-        keyboardController.Update();
-        mouseController.Update();
         mario.Update(gameTime);
         luigi.Update(gameTime);
         base.Update(gameTime);

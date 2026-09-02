@@ -23,6 +23,8 @@ public class MarioPlayer : I2DPlatformPlayer
 
     public void Update(GameTime gameTime)
     {
+        controller.Update();
+
          Vector2 direction = controller.movementDirection;
         float positionSpeed = movementSpeed;
         Animation idleRight = sprite.animations[0];

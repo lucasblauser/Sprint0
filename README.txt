@@ -8,8 +8,9 @@ escape key.
 
 Resources:
 
-AI was used to help format the first interface that was created for the project, IController, and the logic of its Update method. All other methods, classes 
-and interfaces where either written by myself or used from the MonoGame tutorial for creating 2D games.
+AI was used to help format the first interface that was created for the project, IController, and the logic of its Update method. It was also used to 
+help tweak the AnimatedSprite class so that animation speed could be changed without modifying delay. All other code, methods, classes and interfaces 
+were either written by myself or used from the MonoGame tutorial for creating 2D games.
 
 AI was also used to help debug issues with uploading this project to GitHub.
 The link for this projects repository: https://github.com/lucasblauser/Sprint0
