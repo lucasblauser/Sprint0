@@ -9,7 +9,6 @@ public class PlayerSprite : ISprite
 {
     public AnimatedSprite animatedSprite { get; private set;}
     public Animation[] animations { get; private set; }
-
     public PlayerSprite(AnimatedSprite sprite, Animation[] animations)
     {
         this.animatedSprite = sprite;

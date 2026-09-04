@@ -11,38 +11,17 @@ namespace game;
 public class Game1 : Core
 
 {
-    // MARIO
     private I2DPlatformPlayer mario;
 
-    private ISprite marioSprite;
-
-    private AnimatedSprite marioAnimatedSprite;
-
-    private Animation[] marioAnimations;
-
-    // LUIGI
-
     private I2DPlatformPlayer luigi;
-
-    private ISprite luigiSprite;
-
-    private AnimatedSprite luigiAnimatedSprite;
-
-    private Animation[] luigiAnimations;
-
-    // CONTROLLERS
 
     private IController keyboardController;
 
     private IController mouseController;
 
-    // FONT
 
     private SpriteFont font;
 
-    // GLOBAL CONSTANTS
-
-    private const float MOVEMENT_SPEED = 300.0f; // pixels / second
 
     public Game1() : base("Sprint0", 1280, 720, false)
     {
@@ -51,19 +30,10 @@ public class Game1 : Core
 
     protected override void Initialize()
     {
-        base.Initialize();
-
         keyboardController = new KeyboardController();
         mouseController = new MouseController();
 
-        Vector2 marioStartPosition = new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height) * 0.5f;
-        Vector2 luigiStartPosition = marioStartPosition + new Vector2(100, 0);
-
-        ISprite marioSprite = new PlayerSprite(marioAnimatedSprite, marioAnimations);
-        ISprite luigiSprite = new PlayerSprite(luigiAnimatedSprite, luigiAnimations);
-
-        mario = new MarioPlayer(keyboardController, marioStartPosition, marioSprite, MOVEMENT_SPEED);
-        luigi = new MarioPlayer(mouseController, luigiStartPosition, luigiSprite, MOVEMENT_SPEED);
+        base.Initialize();
     }
 
     protected override void LoadContent()
@@ -71,25 +41,11 @@ public class Game1 : Core
         TextureAtlas marioAtlas = TextureAtlas.FromFile(Content, "images/mario-definition.xml");
         TextureAtlas luigiAtlas = TextureAtlas.FromFile(Content, "images/luigi-definition.xml");
 
-        marioAnimations = new Animation[4];
-        marioAnimations[0] = marioAtlas.GetAnimation("mario-idle-right");
-        marioAnimations[1] = marioAtlas.GetAnimation("mario-idle-left");
-        marioAnimations[2] = marioAtlas.GetAnimation("mario-walk-right");
-        marioAnimations[3] = marioAtlas.GetAnimation("mario-walk-left");
+        Vector2 marioStartPosition = new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height) * 0.5f;
+        Vector2 luigiStartPosition = marioStartPosition + new Vector2(100, 0);
 
-        luigiAnimations = new Animation[4];
-        luigiAnimations[0] = luigiAtlas.GetAnimation("luigi-idle-right");
-        luigiAnimations[1] = luigiAtlas.GetAnimation("luigi-idle-left");
-        luigiAnimations[2] = luigiAtlas.GetAnimation("luigi-walk-right");
-        luigiAnimations[3] = luigiAtlas.GetAnimation("luigi-walk-left");
-
-        marioAnimatedSprite = marioAtlas.CreateAnimatedSprite("mario-idle-right");
-        marioAnimatedSprite.CenterOrigin();
-        marioAnimatedSprite.Scale = new Vector2(4.0f, 4.0f);
-
-        luigiAnimatedSprite = luigiAtlas.CreateAnimatedSprite("luigi-idle-left");
-        luigiAnimatedSprite.CenterOrigin();
-        luigiAnimatedSprite.Scale = new Vector2(4.0f, 4.0f);
+        mario = new Mario(keyboardController, marioStartPosition, marioAtlas);
+        luigi = new Luigi(mouseController, luigiStartPosition, luigiAtlas);
 
         font = Content.Load<SpriteFont>("fonts/arial");
     }

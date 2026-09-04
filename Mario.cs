@@ -6,19 +6,30 @@ using MonoGameLibrary;
 using MonoGameLibrary.Graphics;
 using MonoGameLibrary.Input;
 
-public class MarioPlayer : I2DPlatformPlayer
+public class Mario : I2DPlatformPlayer
 {
     public Vector2 position { get; private set; }
     public ISprite sprite { get; private set; }
     public IController controller { get; private set; }
     public float movementSpeed { get; private set; }
 
-    public MarioPlayer(IController controller, Vector2 startPosition, ISprite sprite, float movementSpeed)
+    public Mario(IController controller, Vector2 startPosition, TextureAtlas atlas)
     {
         this.controller = controller;
         this.position = startPosition;
-        this.sprite = sprite;
-        this.movementSpeed = movementSpeed;
+
+        AnimatedSprite animatedSprite = atlas.CreateAnimatedSprite("mario-idle-right");
+        animatedSprite.CenterOrigin();
+        animatedSprite.Scale *= 4.0f;
+
+        this.sprite = new PlayerSprite(animatedSprite, new Animation[4]);
+
+        this.sprite.animations[0] = atlas.GetAnimation("mario-idle-right");
+        this.sprite.animations[1] = atlas.GetAnimation("mario-idle-left");
+        this.sprite.animations[2] = atlas.GetAnimation("mario-walk-right");
+        this.sprite.animations[3] = atlas.GetAnimation("mario-walk-left");
+
+        this.movementSpeed = 300.0f; // pixels / second
     }
 
     public void Update(GameTime gameTime)
