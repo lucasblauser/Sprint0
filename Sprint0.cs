@@ -18,10 +18,8 @@ public class Game1 : Core
     private IController keyboardController;
 
     private IController mouseController;
-
-
+    
     private SpriteFont font;
-
 
     public Game1() : base("Sprint0", 1280, 720, false)
     {
