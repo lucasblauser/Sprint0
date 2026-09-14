@@ -2,6 +2,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
 using MonoGameLibrary;
 using MonoGameLibrary.Graphics;
 using MonoGameLibrary.Input;
@@ -13,8 +14,10 @@ public class Mario : I2DPlatformPlayer
     public IController controller { get; private set; }
     public float movementSpeed { get; private set; }
 
-    public Mario(IController controller, Vector2 startPosition, TextureAtlas atlas)
+    public Mario(IController controller, Vector2 startPosition, ContentManager Content)
     {
+        TextureAtlas atlas = TextureAtlas.FromFile(Content, "images/mario-definition.xml");
+
         this.controller = controller;
         this.position = startPosition;
 

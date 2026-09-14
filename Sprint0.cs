@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Mime;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -21,6 +22,8 @@ public class Game1 : Core
     
     private SpriteFont font;
 
+    
+
     public Game1() : base("Sprint0", 1280, 720, false)
     {
         
@@ -36,15 +39,10 @@ public class Game1 : Core
 
     protected override void LoadContent()
     {
-        TextureAtlas marioAtlas = TextureAtlas.FromFile(Content, "images/mario-definition.xml");
-        TextureAtlas luigiAtlas = TextureAtlas.FromFile(Content, "images/luigi-definition.xml");
-
         Vector2 marioStartPosition = new Vector2(Window.ClientBounds.Width, Window.ClientBounds.Height) * 0.5f;
         Vector2 luigiStartPosition = marioStartPosition + new Vector2(100, 0);
-
-        mario = new Mario(keyboardController, marioStartPosition, marioAtlas);
-        luigi = new Luigi(mouseController, luigiStartPosition, luigiAtlas);
-
+        mario = new Mario(keyboardController, marioStartPosition, Content);
+        luigi = new Luigi(mouseController, luigiStartPosition, Content);
         font = Content.Load<SpriteFont>("fonts/arial");
     }
 
